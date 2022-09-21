@@ -1,0 +1,19 @@
+{
+    "source": {
+      "include": ["src"],
+      "includePattern": ".+\\.js(doc|x)?$",
+      "excludePattern": "(nodes_modules|docs)"
+    },
+    "plugins": ["plugins/markdown"],
+    "templates": {
+      "cleverLinks": true,
+      "monospaceLinks": true,
+      "useLongnameInNav": false,
+      "showInheritedInNav": true
+    },
+    "opts": {
+      "recurse": true,
+      "destination": "./docs/"
+    }
+}
+  
