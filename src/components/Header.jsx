@@ -15,7 +15,7 @@ const Header = () => {
       </Link>
       <div className="a">
         <Link className="main-nav-item" to="/">
-          <i className="fa fa-user-circle"></i>
+          <i className="fa fa-user-circle circle"></i>
           Sign In
         </Link>
       </div>
