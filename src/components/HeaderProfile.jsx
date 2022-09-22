@@ -15,7 +15,7 @@ const HeaderProfile = () => {
       </Link>
       <div>
         <Link className="main-nav-item" to="./profile">
-          <i class="fa fa-user-circle circle"></i>
+          <i className="fa fa-user-circle circle"></i>
           Tony
         </Link>
         <Link className="main-nav-item" to="./">
