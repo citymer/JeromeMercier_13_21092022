@@ -18,7 +18,7 @@ const HeaderProfile = () => {
           <i className="fa fa-user-circle circle"></i>
           Tony
         </Link>
-        <Link className="main-nav-item" to="./">
+        <Link className="main-nav-item" to="/">
           <i className="fa fa-sign-out circle"></i>
           Sign Out
         </Link>
