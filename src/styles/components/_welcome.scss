@@ -55,10 +55,28 @@
   font-weight: bold;
   padding: 10px;
 }
-
-.header {
+.button-size {
+  width: 130px;
+}
+.save {
+  padding-right: 15px;
+}
+.cancel {
+  margin-left: 15px;
+}
+.buttons {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.header,
+.headers {
   color: #fff;
   margin-bottom: 2rem;
+}
+.headers {
+  display: none;
 }
 .main {
   flex: 1;
@@ -76,4 +94,14 @@
   @include min720 {
     width: 200px;
   }
+}
+.divInput {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 370px;
+}
+input {
+  height: 30px;
 }

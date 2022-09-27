@@ -14,7 +14,7 @@ const Header = () => {
         <h1 className="srOnly">Argent Bank</h1>
       </Link>
       <div className="a">
-        <Link className="main-nav-item" to="/">
+        <Link className="main-nav-item" to="/login">
           <i className="fa fa-user-circle circle"></i>
           Sign In
         </Link>

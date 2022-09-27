@@ -6,7 +6,7 @@ import './App.css'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
-import './styles/index.css'
+import '../src/styles/index.scss'
 
 function App() {
   return (
