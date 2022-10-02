@@ -1,8 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
 
 const HeaderProfile = () => {
+  const dispatch = useDispatch
   return (
     <nav className="main-nav">
       <Link className="main-nav-logo" to="/">
@@ -18,7 +20,13 @@ const HeaderProfile = () => {
           <i className="fa fa-user-circle circle"></i>
           Tony
         </Link>
-        <Link className="main-nav-item" to="/">
+        <Link
+          className="main-nav-item"
+          onClick={() => {
+            dispatch({ type: 'isAuthenticate' })
+          }}
+          to="/"
+        >
           <i className="fa fa-sign-out circle"></i>
           Sign Out
         </Link>
