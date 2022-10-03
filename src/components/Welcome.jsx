@@ -1,6 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+
 const Welcome = () => {
+  const lastName = useSelector((state) => state.connect.user.lastName)
+  const firstName = useSelector((state) => state.connect.user.firstName)
   const [block, setBlock] = useState(false)
 
   function displaySaveName() {
@@ -13,7 +17,7 @@ const Welcome = () => {
         <h1>
           Welcome back
           <br />
-          Tony Jarvis!
+          {firstName} {lastName}!
         </h1>
         <button className="edit-button" onClick={displaySaveName}>
           Edit Name

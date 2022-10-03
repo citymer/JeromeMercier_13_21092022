@@ -1,29 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { authentification } from '../services/API'
 import { useStore, useSelector } from 'react-redux'
-
 import { Navigate } from 'react-router-dom'
-//import { authResolved } from '../features/connextionSlice'
 
 const MainLogin = () => {
   const store = useStore()
   const logged = useSelector((state) => state.connect.isAuthenticate)
   const error = useSelector((state) => state.connect.error)
-  const status = useSelector((state) => state.connect.status)
-  const [isLoading, setIsLoading] = useState(false)
-
-  console.log(logged)
-  useEffect(() => {
-    if (status === 'pending') {
-      setIsLoading(true)
-    }
-    if (status === 'rejected') {
-      const timer = setTimeout(() => {
-        setIsLoading(false)
-      }, 500)
-      return () => clearTimeout(timer)
-    }
-  }, [status])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -41,6 +24,13 @@ const MainLogin = () => {
       <section className="signInContent">
         <i className="fa fa-user-circle signInIcon"></i>
         <h1>Sign In</h1>
+        {error.status === 400 ? (
+          <span className="error-msg">Mauvais identifiant ou mot de passe</span>
+        ) : error.status !== null && error.status !== 400 ? (
+          <span className="error-mdg">
+            Une erreur est survenue : {error.message}
+          </span>
+        ) : null}
         <form onSubmit={handleSubmit}>
           <div className="inputWrapper">
             <label htmlFor="username">Username</label>
@@ -55,7 +45,11 @@ const MainLogin = () => {
             <label htmlFor="remember-me">Remember me</label>
           </div>
 
-          <input type="submit" value="Sign In" className="signInButton"></input>
+          <input
+            type="submit"
+            defaultValue="Sign In"
+            className="signInButton"
+          ></input>
         </form>
       </section>
     )

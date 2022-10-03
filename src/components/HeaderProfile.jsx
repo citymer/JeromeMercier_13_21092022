@@ -1,10 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
 
 const HeaderProfile = () => {
-  const dispatch = useDispatch
+  const firstName = useSelector((state) => state.connect.user.firstName)
+  const dispatch = useDispatch()
+  const auth = useSelector((state) => state.connect.isAuthenticate)
+
+  const disconnect = () => {
+    dispatch({ auth })
+  }
+
   return (
     <nav className="main-nav">
       <Link className="main-nav-logo" to="/">
@@ -18,15 +25,9 @@ const HeaderProfile = () => {
       <div>
         <Link className="main-nav-item" to="./profile">
           <i className="fa fa-user-circle circle"></i>
-          Tony
+          {firstName}
         </Link>
-        <Link
-          className="main-nav-item"
-          onClick={() => {
-            dispatch({ type: 'isAuthenticate' })
-          }}
-          to="/"
-        >
+        <Link className="main-nav-item" onClick={disconnect} to="/">
           <i className="fa fa-sign-out circle"></i>
           Sign Out
         </Link>
