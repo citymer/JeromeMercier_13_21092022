@@ -26,8 +26,8 @@ const Welcome = () => {
       <div className="headers" style={{ display: block ? 'block' : 'none' }}>
         <h1>Welcome back</h1>
         <div className="divInput">
-          <input className="prenom" type="text" value="Prenom" />
-          <input className="nom" type="text" value="Nom" />
+          <input className="prenom" type="text" placeholder={firstName} />
+          <input className="nom" type="text" placeholder={lastName} />
         </div>
         <div className="buttons">
           <button className="edit-button button-size save">Save</button>

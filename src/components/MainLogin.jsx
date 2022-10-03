@@ -17,6 +17,7 @@ const MainLogin = () => {
     }
     authentification(store, logCredential)
   }
+
   if (logged) {
     return <Navigate to="/profile" />
   } else {
