@@ -27,7 +27,7 @@ const HeaderProfile = () => {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
-      <div>
+      <div className="userSignOut">
         <Link className="main-nav-item" to="./profile">
           <i className="fa fa-user-circle circle"></i>
           {firstName}

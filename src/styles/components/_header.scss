@@ -1,3 +1,5 @@
+@import '../utils/_mixins.scss';
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -11,7 +13,13 @@
 .main-nav a.router-link-exact-active {
   color: #42b983;
 }
-
+.userSignOut {
+  display: flex;
+  flex-direction: column;
+  @include min720 {
+    flex-direction: initial;
+  }
+}
 .main-nav-item {
   text-decoration: none;
   margin-right: 0.5rem;
