@@ -1,8 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import authSlice from '../features/connextionSlice'
+import { rootReducer } from '../features/root.reducer'
 
 export const store = configureStore({
-  reducer: {
-    connect: authSlice,
-  },
+  reducer: rootReducer,
 })

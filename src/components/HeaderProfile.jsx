@@ -2,14 +2,19 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
+import { logout } from '../features/root.reducer'
+import { useNavigate } from 'react-router-dom'
 
 const HeaderProfile = () => {
-  const firstName = useSelector((state) => state.connect.user.firstName)
+  const firstName = useSelector((state) => state.user.firstName)
   const dispatch = useDispatch()
-  const auth = useSelector((state) => state.connect.isAuthenticate)
+  const navigate = useNavigate()
 
-  const disconnect = () => {
-    dispatch({ auth })
+  const disconnect = (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    dispatch(logout())
+    navigate('/')
   }
 
   return (
