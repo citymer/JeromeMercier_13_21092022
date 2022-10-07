@@ -43,5 +43,22 @@ Populate database with two users
 
 ```npm run populate-db```
 
+### Installing and launching Front-end
+
+Clone the repository of Sporsee Front-end:
+
+```git clone https://github.com/citymer/JeromeMercier_13_21092022.git ```
+
+Inside this Front-end repository, install dependencies:
+
+```yarn install```
+
+Lauch Front-End on port 3001:
+
+```yarn start```
+
+Front-End is now rendered at URL http://localhost:3000
+
+
 
 
