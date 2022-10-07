@@ -1,10 +1,14 @@
 # ArgentBank
 
-use an API for a bank user account with react
+Use an API for a bank user account with react
 
-## Available Scripts
+## Technologies
 
-In the project directory, you can run:
+ ![React](https://img.shields.io/badge/react_V18.2.0-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+ 
+ ![React Router](https://img.shields.io/badge/React_Router_Dom_V6.3.0-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+ 
+ ![SASS](https://img.shields.io/badge/SASS_V1.54.4-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 ### `npm start`
 
