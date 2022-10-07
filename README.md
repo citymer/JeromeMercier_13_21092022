@@ -17,6 +17,31 @@ Use an API for a bank user account with react
 
 ## Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[![NodeJs](https://img.shields.io/badge/NodeJs-v16.17.0-blue.svg)](https://godoc.org/nanomsg.org/go/mangos/v2)
+
+[![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)](https://visualstudio.microsoft.com)
+
+[![Yarn](https://img.shields.io/badge/Yarn-blue.svg)](https://godoc.org/nanomsg.org/go/mangos/v2)
+
+### Installing and lauching Back-end
+
+Clone the repository of ArgentBank Back-end:
+
+```git clone [https://github.com/citymer/p12-backend](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API.git)```
+
+Inside this back-end repository, install dependencies:
+
+```npm install```
+
+Lauch back-end on port 3001:
+
+```npm run dev:server```
+
+Populate database with two users
+
+```npm run populate-db```
+
+
+
