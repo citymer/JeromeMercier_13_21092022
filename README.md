@@ -29,7 +29,7 @@ Use an API for a bank user account with react
 
 Clone the repository of ArgentBank Back-end:
 
-```git clone [https://github.com/citymer/p12-backend](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API.git)```
+```git clone https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API.git```
 
 Inside this back-end repository, install dependencies:
 
