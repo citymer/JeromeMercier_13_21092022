@@ -5,7 +5,8 @@ import { editUserProfil } from '../services/API'
 const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
   const store = useStore()
   const token = useSelector((state) => state.token)
-  const user = useSelector((state) => state.user)
+  const userFirst = useSelector((state) => state.user.firstName)
+  const userLast = useSelector((state) => state.user.lastName)
   const [validInput, setValidInput] = useState({
     invalidmsg: null,
     length: {
@@ -13,8 +14,8 @@ const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
       lastName: false,
     },
   })
-  const patern = new RegExp(/^[a-zA-Z]*$/)
 
+  const patern = new RegExp(/^[a-zA-Z]*$/)
   const handleChange = (e) => {
     if (patern.test(e.target.value) === true) {
       if (e.target.value.length > 1) {
@@ -36,10 +37,17 @@ const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
           },
         })
       }
-      setUsername({
-        ...username,
-        [e.target.name]: e.target.value,
-      })
+      if (e.target.name === 'firstName') {
+        setUsername({
+          ...username,
+          firstName: e.target.value,
+        })
+      } else {
+        setUsername({
+          ...username,
+          lastName: e.target.value,
+        })
+      }
     } else {
       setValidInput({
         ...validInput,
@@ -50,16 +58,9 @@ const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (
-      validInput.length.firstName === true &&
-      validInput.length.lastName === true
-    ) {
+
+    if (username.firstName.length > 0 && username.lastName.length > 0) {
       editUserProfil(store, token, username)
-      setUsername({
-        ...username,
-        firstName: '',
-        lastName: '',
-      })
       setFormOpen(!formOpen)
     } else {
       setValidInput({
@@ -68,7 +69,6 @@ const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
       })
     }
   }
-
   const handleReset = () => {
     setUsername({
       ...username,
@@ -77,6 +77,7 @@ const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
     })
     setFormOpen(!formOpen)
   }
+
   return (
     <form>
       {validInput.invalidmsg !== null ? (
@@ -88,18 +89,16 @@ const ChangeName = ({ formOpen, setFormOpen, username, setUsername }) => {
           className="prenom"
           type="text"
           name="firstName"
-          value={username.firstName}
           onChange={handleChange}
-          placeholder={user.firstName}
+          defaultValue={userFirst}
           required
         />
         <input
           className="nom"
           type="text"
           name="lastName"
-          value={username.lastName}
           onChange={handleChange}
-          placeholder={user.lastName}
+          defaultValue={userLast}
           required
         />
       </div>

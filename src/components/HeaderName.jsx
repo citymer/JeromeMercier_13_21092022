@@ -11,8 +11,8 @@ const HeaderName = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [formOpen, setFormOpen] = useState(false)
   const [username, setUsername] = useState({
-    firstName: '',
-    lastName: '',
+    firstName: user.firstName,
+    lastName: user.lastName,
   })
 
   useEffect(() => {
@@ -31,10 +31,7 @@ const HeaderName = () => {
     <div className="header">
       {formOpen === true ? (
         <Fragment>
-          <h1>
-            Welcome back
-            <br /> {username.firstName} {username.lastName}!
-          </h1>
+          <h1>Welcome back</h1>
           <ChangeName
             formOpen={formOpen}
             setFormOpen={setFormOpen}

@@ -72,6 +72,7 @@ const authSlice = createSlice({
         }
       }
     },
+
     authRejected(state, action) {
       if (state.status === 'pending' || state.status === 'updating') {
         return {
